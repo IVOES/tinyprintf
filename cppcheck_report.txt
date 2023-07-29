@@ -1,0 +1,53 @@
+test/printf.c:56:5: portability: %zd in format string (no. 1) requires 'ssize_t' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    TPRINTF("a=%zd\n", sizeof(blah));
+    ^
+test/printf.c:58:5: portability: %zi in format string (no. 1) requires 'size_t' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    TPRINTF("a=%zi\n", sizeof(blah));
+    ^
+test/sprintf.c:65:5: portability: %zd in format string (no. 1) requires 'ssize_t' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    TPRINTF("a=%zd", sizeof(blah));
+    ^
+test/sprintf.c:67:5: portability: %zi in format string (no. 1) requires 'size_t' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+    TPRINTF("a=%zi", sizeof(blah));
+    ^
+tinyprintf.c:458:55: style:inconclusive: Function 'tfp_vsnprintf' argument 3 names different: declaration 'fmt' definition 'format'. [funcArgNamesDifferent]
+int tfp_vsnprintf(char *str, size_t size, const char *format, va_list ap)
+                                                      ^
+tinyprintf.h:160:55: note: Function 'tfp_vsnprintf' argument 3 names different: declaration 'fmt' definition 'format'.
+int tfp_vsnprintf(char *str, size_t size, const char *fmt, va_list ap);
+                                                      ^
+tinyprintf.c:458:55: note: Function 'tfp_vsnprintf' argument 3 names different: declaration 'fmt' definition 'format'.
+int tfp_vsnprintf(char *str, size_t size, const char *format, va_list ap)
+                                                      ^
+tinyprintf.c:478:54: style:inconclusive: Function 'tfp_snprintf' argument 3 names different: declaration 'fmt' definition 'format'. [funcArgNamesDifferent]
+int tfp_snprintf(char *str, size_t size, const char *format, ...)
+                                                     ^
+tinyprintf.h:161:54: note: Function 'tfp_snprintf' argument 3 names different: declaration 'fmt' definition 'format'.
+int tfp_snprintf(char *str, size_t size, const char *fmt, ...) \
+                                                     ^
+tinyprintf.c:478:54: note: Function 'tfp_snprintf' argument 3 names different: declaration 'fmt' definition 'format'.
+int tfp_snprintf(char *str, size_t size, const char *format, ...)
+                                                     ^
+tinyprintf.c:501:41: style:inconclusive: Function 'tfp_vsprintf' argument 2 names different: declaration 'fmt' definition 'format'. [funcArgNamesDifferent]
+int tfp_vsprintf(char *str, const char *format, va_list ap)
+                                        ^
+tinyprintf.h:163:41: note: Function 'tfp_vsprintf' argument 2 names different: declaration 'fmt' definition 'format'.
+int tfp_vsprintf(char *str, const char *fmt, va_list ap);
+                                        ^
+tinyprintf.c:501:41: note: Function 'tfp_vsprintf' argument 2 names different: declaration 'fmt' definition 'format'.
+int tfp_vsprintf(char *str, const char *format, va_list ap)
+                                        ^
+tinyprintf.c:511:40: style:inconclusive: Function 'tfp_sprintf' argument 2 names different: declaration 'fmt' definition 'format'. [funcArgNamesDifferent]
+int tfp_sprintf(char *str, const char *format, ...)
+                                       ^
+tinyprintf.h:164:40: note: Function 'tfp_sprintf' argument 2 names different: declaration 'fmt' definition 'format'.
+int tfp_sprintf(char *str, const char *fmt, ...) \
+                                       ^
+tinyprintf.c:511:40: note: Function 'tfp_sprintf' argument 2 names different: declaration 'fmt' definition 'format'.
+int tfp_sprintf(char *str, const char *format, ...)
+                                       ^
+tinyprintf.c:511:0: style: The function 'tfp_sprintf' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
